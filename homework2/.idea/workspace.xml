@@ -15,8 +15,35 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="homework2" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2G7Y1nqFNZaAZnvftEAiO424S5I" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -28,9 +55,58 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "corretto-15"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.FileLogger">
+    <configuration name="AllLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.logging.AllLogger" />
+      <module name="homework2.logger.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsoleLoggger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.logging.ConsoleLoggger" />
+      <module name="homework2.logger.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.logging.FileLogger" />
+      <module name="homework2.logger.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FileLogger" />
+        <item itemvalue="Application.ConsoleLoggger" />
+        <item itemvalue="Application.AllLogger" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,7 +115,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665740884675</updated>
-      <workItem from="1665740888488" duration="111000" />
+      <workItem from="1665740888488" duration="7462000" />
     </task>
     <servers />
   </component>
