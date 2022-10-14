@@ -1,5 +1,14 @@
 package org.example.logging;
 
 
-public class FileLogger {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class FileLogger implements MyLogger{
+
+    private static final Logger logger = LoggerFactory.getLogger(FileLogger.class);
+    @Override
+    public void log(String message) {
+        logger.info(message);
+    }
 }
