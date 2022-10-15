@@ -1,30 +1,40 @@
 package org.example;
+
 import com.google.inject.AbstractModule;
 import org.example.logging.*;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public final class InjectionModule extends AbstractModule {
 
-    private final String arg;
+    private final String[] args;
 
-    public InjectionModule(@NotNull String arg){
+    public InjectionModule(@NotNull String[] args) {
         super();
-        this.arg = arg;
+        this.args = args;
     }
 
     @Override
     protected void configure() {
-        switch(arg) {
-            case "-f" :
-                bind(MyLogger.class).to(FileLogger.class);
+        switch (args[0]) {
+            case "-c":
+                bind(MyLogger.class).toInstance(new ConsoleLogger(LoggerFactory.getLogger(ConsoleLogger.class)));
                 break;
-            case "-a" :
-                bind(MyLogger.class).to(AllLogger.class);
+
+            case "-f":
+                if (args.length != 2) throw new IllegalArgumentException("Tag not found");
+                bind(MyLogger.class).toInstance(new FileLogger(LoggerFactory.getLogger(FileLogger.class), args[1]));
                 break;
+
+            case "-a":
+                if (args.length != 2) throw new IllegalArgumentException("Tag not found");
+                bind(MyLogger.class).toInstance(new AllLogger(
+                        LoggerFactory.getLogger(ConsoleLogger.class),
+                        LoggerFactory.getLogger(FileLogger.class), args[1]));
+                break;
+
             default:
-                bind(MyLogger.class).to(ConsoleLoggger.class);
+                throw new IllegalArgumentException("No such argument");
         }
 
     }

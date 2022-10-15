@@ -2,12 +2,20 @@ package org.example.logging;
 
 import org.example.Application;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class AllLogger implements MyLogger {
-    private static final Logger consoleLogger = LoggerFactory.getLogger(ConsoleLoggger.class);
-    private static final Logger fileLogger = LoggerFactory.getLogger(FileLogger.class);
-    @Override public void log(String message,  String tag) {
+    private final Logger consoleLogger;
+    private final Logger fileLogger;
+    private final String tag;
+
+    public AllLogger(Logger consoleLogger, Logger fileLogger, String tag) {
+        this.consoleLogger = consoleLogger;
+        this.fileLogger = fileLogger;
+        this.tag = "<" + tag + ">%s</" + tag + ">";
+    }
+
+    @Override
+    public void log(String message) {
         consoleLogger.info("N = " + Application.N++ + " " + message);
         fileLogger.info("N = " + Application.N++ + " " + String.format(tag, message));
     }

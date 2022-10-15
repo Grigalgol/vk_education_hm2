@@ -15,7 +15,7 @@
 
 
     <Loggers>
-        <Logger name="org.example.logging.ConsoleLoggger" level="info" additivity="false">
+        <Logger name="org.example.logging.ConsoleLogger" level="info" additivity="false">
             <AppenderRef ref="LogToConsole"/>
         </Logger>
 
