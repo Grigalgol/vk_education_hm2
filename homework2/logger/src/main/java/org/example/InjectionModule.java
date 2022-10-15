@@ -1,6 +1,7 @@
 package org.example;
 import com.google.inject.AbstractModule;
 import org.example.logging.*;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,7 +9,7 @@ public final class InjectionModule extends AbstractModule {
 
     private final String arg;
 
-    public InjectionModule(String arg){
+    public InjectionModule(@NotNull String arg){
         super();
         this.arg = arg;
     }

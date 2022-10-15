@@ -5,5 +5,5 @@ import org.slf4j.LoggerFactory;
 
 public interface MyLogger {
 
-    void log(String message);
+    void log(String message, String tag);
 }

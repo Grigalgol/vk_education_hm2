@@ -19,11 +19,6 @@
             <AppenderRef ref="LogToConsole"/>
         </Logger>
 
-        <Logger name="org.example.logging.AllLogger" level="info" additivity="false">
-            <AppenderRef ref="LogToFile"/>
-            <AppenderRef ref="LogToConsole"/>
-        </Logger>
-
         <Logger name="org.example.logging.FileLogger" level="info" additivity="false">
             <AppenderRef ref="LogToFile"/>
         </Logger>

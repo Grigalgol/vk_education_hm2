@@ -16,21 +16,33 @@ public class Application {
     @Inject
     private MyLogger logger;
 
+    public static int N;
+
     public static void main(@NotNull String[] args) {
+        String tag = "";
+
+        if (!args[0].equals("-c") && !args[0].equals("-f") && !args[0].equals("-a")) {
+            throw new IllegalArgumentException("This argument is not exits");
+        }
+        if (args[0].equals("-f") || args[0].equals("-a")) {
+            if (args.length != 2) {
+                throw new IllegalArgumentException("Tag is not exits");
+            }
+            tag = "<" + args[1] + ">%s</" + args[1] + ">";
+        }
+
         final Injector injector = Guice.createInjector(new InjectionModule(args[0]));
-        injector.getInstance(Application.class).waitForInput();
+        injector.getInstance(Application.class).waitForInput(tag);
     }
 
-    public void waitForInput() {
+    public void waitForInput(String tag) {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.println("Waiting for new lines. Key in Ctrl+D to exit.");
             while (true) {
                 String message = scanner.nextLine();
-                logger.log(message);
-
+                logger.log(message, tag);
             }
         } catch (IllegalStateException | NoSuchElementException e) {
-
         }
     }
 
